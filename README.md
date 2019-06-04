@@ -1,5 +1,5 @@
 # vuetify-avatar-uploader
-> :cloud: `v-avatar` + file uploads
+> :koala: `v-avatar` + file uploads
 ---
 
 Wraps Vuetify's [`v-avatar`](https://vuetifyjs.com/en/components/avatars) component with file upload magic.
