@@ -81,6 +81,7 @@ The following is a real-world example of how the library can be used to support 
     :url="url"
     :request="request"
     :clickable="clickable"
+    :rename="rename"
     @success="success"
     @failed="failed"
   />
