@@ -18,7 +18,7 @@ import VAvatarUploader from 'vuetify-avatar-uploader'
 
 export default {
   components: {
-    'v-avatar-uploader': AvatarUploader
+    VAvatarUploader
   }
 }
 ```
