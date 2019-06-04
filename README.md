@@ -70,10 +70,84 @@ export default {
 </script>
 ```
 
-It's also recommended to specify the `:clickable` property, as this determines when users should be able to click on the avatar to perform file uploads.
+## Example
 
-More details on the supported properties follows.
+The following is a real-world example of how the library can be used to support user avatar uploads:
 
+```html
+<template>
+  <avatar-uploader
+    :url="url"
+    :request="request"
+    :clickable="clickable"
+    @success="success"
+    @failed="failed"
+  />
+</template>
+
+<script>
+import AvatarUploader from 'vuetify-avatar-uploader'
+import events from '@/util/events'
+
+import uuid from 'uuid/v4'
+import get from 'dlv'
+import { mapState } from 'vuex'
+
+export default {
+  name: 'user-avatar-uploader',
+
+  props: {
+    user: {
+      type: Object,
+      required: true
+    }
+  },
+
+  computed: {
+    ...mapState('api/user', ['session']),
+
+    url () {
+      return get(this.user, 'avatar.thumb')
+    },
+
+    clickable () {
+      return this.user.id === this.session.id
+    }
+  },
+
+  methods: {
+    request (form, config) {
+      return this.$http.post('/v1/avatars', form, config)
+    },
+
+    rename (file) {
+      const ext = file.name.split('.')[1]
+      const name = `${uuid()}.${ext}`
+
+      return name
+    },
+
+    success ({ data }) {
+      // Update user avatar with the latest
+      Object.assign(this.user.avatar, data)
+
+      // Request the latest user object from the API to update all other references in the app
+      this.$store.dispatch('api/user/get')
+    },
+
+    failed (error) {
+      events.$emit('notify', { text: 'Failed to upload avatar', kind: 'error', icon: 'warning' })
+    }
+  },
+
+  components: {
+    AvatarUploader
+  }
+}
+</script>
+```
+
+## API
 
 ### Props
 
