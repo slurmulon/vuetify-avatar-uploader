@@ -77,7 +77,7 @@ The following is a real-world example of how the library can be used to support 
 
 ```html
 <template>
-  <avatar-uploader
+  <v-avatar-uploader
     :url="url"
     :request="request"
     :clickable="clickable"
@@ -88,7 +88,7 @@ The following is a real-world example of how the library can be used to support 
 </template>
 
 <script>
-import AvatarUploader from 'vuetify-avatar-uploader'
+import VAvatarUploader from 'vuetify-avatar-uploader'
 import events from '@/util/events'
 
 import uuid from 'uuid/v4'
@@ -143,7 +143,7 @@ export default {
   },
 
   components: {
-    AvatarUploader
+    VAvatarUploader
   }
 }
 </script>
