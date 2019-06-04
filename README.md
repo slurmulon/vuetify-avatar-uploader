@@ -1,34 +1,111 @@
 # vuetify-avatar-uploader
+> :cloud: `v-avatar` + file uploads
+---
 
-## Project setup
-```
-npm install
-```
+Wraps Vuetify's [`v-avatar`](https://vuetifyjs.com/en/components/avatars) component with file upload magic.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Installation
 
-### Compiles and minifies for production
-```
-npm run build
+```sh
+npm i vuetify-avatar-uploader
 ```
 
-### Run your tests
-```
-npm run test
+### Module
+
+```js
+
+import VAvatarUploader from 'vuetify-avatar-uploader'
+
+export default {
+  components: {
+    'v-avatar-uploader': AvatarUploader
+  }
+}
 ```
 
-### Lints and fixes files
-```
-npm run lint
+### Browser
+
+```html
+<script type="text/javascript" src="node_modules/vuejs/dist/vue.min.js"></script>
+<script type="text/javascript" src="node_modules/vuetify-upload-button/dist/upload-button.min.js"></script>
+<script type="text/javascript">
+  Vue.use(VAvatarUploader);
+</script>
 ```
 
-### Run your unit tests
-```
-npm run test:unit
+## Usage
+
+At a minimum, you must provide `:url` and `:request` properties:
+
+```vue
+<template>
+  <v-avatar-uploader
+    :url="url"
+    :request="request"
+  />
+</template>
+
+<script>
+import VAvatarUploader from 'vuetify-avatar-uploader'
+
+export default {
+  computed: {
+    // Determine the URL to show, typically from an object representing a user
+    url () {
+      return 'https://randomuser.me/api/portraits/men/1.jpg'
+    }
+  },
+
+  methods: {
+    // Responsible for performing the upload request to your API
+    request (form, config) {
+      return this.$http.post('/v1/avatars', form, config)
+    }
+  },
+
+  components: {
+    VAvatarUploader
+  }
+}
+</script>
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+It's also recommended to specify the `:clickable` property, as this determines when users should be able to click on the avatar to perform file uploads.
+
+More details on the supported properties follows.
+
+
+### Props
+
+**Name**|**Description**|**Type**|**Required**|**Default**
+-----|-----|-----|-----|-----
+url|URL of the avatar|`String`|Yes| 
+`request`|Performs the file upload|`Function`|Yes| 
+`rename`|Renames the file before upload|`Function`|No|`file => file.name`
+`clickable`|Determines if the user can click to upload|`Boolean`|No|`true`
+`maxSize`|Maximum file upload size (in bytes)|`Number`|No|`2048`
+`avatar`|Core `v-avatar` configuration object|`Object`|No|`{}`
+
+### Events
+
+**Name**|**Description**
+-----|-----
+`success`|File upload succeeded
+`failed`|File upload failed
+`error-type`|File upload MIME type is unsupported
+`error-type`|File upload exceeds maximum size
+
+### Slots
+
+ - `none`
+ - `loading`
+
+### Future
+
+ - [] Provide configuration options for `v-progress-bar`
+ - [] Handle upload cancellations
+ - [] Allow custom supported MIME types
+
+## License
+
+MIT
