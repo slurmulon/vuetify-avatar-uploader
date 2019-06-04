@@ -184,7 +184,8 @@ export default {
 ### Future
 
  - [ ] Provide configuration options for `v-progress-bar`
- - [ ] Handle upload cancellations
+ - [ ] Support upload cancellations
+ - [ ] Support upload deletions (can only replace uploads right now)
  - [ ] Allow custom supported MIME types
 
 ## License
