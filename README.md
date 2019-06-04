@@ -37,7 +37,7 @@ export default {
 
 At a minimum, you must provide `:url` and `:request` properties:
 
-```vue
+```html
 <template>
   <v-avatar-uploader
     :url="url"
