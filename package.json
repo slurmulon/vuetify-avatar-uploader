@@ -1,28 +1,39 @@
 {
   "name": "vuetify-avatar-uploader",
   "version": "0.1.0",
-  "private": true,
+  "main": "dist/vuetify-avatar-uploader.js",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "test:unit": "vue-cli-service test:unit"
+    "build": "rm -rf dist && webpack --mode production"
   },
-  "dependencies": {
-    "core-js": "^2.6.5",
-    "vue": "^2.6.10"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/slurmulon/vuetify-avatar-uploader"
+  },
+  "keywords": [
+    "vue",
+    "vuejs",
+    "vuetify",
+    "vuetifyjs",
+    "avatar",
+    "upload"
+  ],
+  "peerDependencies": {
+    "vue": "^2.6.10",
+    "vuetify": "^1.5.14"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.8.0",
-    "@vue/cli-plugin-eslint": "^3.8.0",
-    "@vue/cli-plugin-unit-mocha": "^3.8.0",
-    "@vue/cli-service": "^3.8.0",
-    "@vue/eslint-config-standard": "^4.0.0",
-    "@vue/test-utils": "1.0.0-beta.29",
-    "babel-eslint": "^10.0.1",
-    "chai": "^4.1.2",
-    "eslint": "^5.16.0",
-    "eslint-plugin-vue": "^5.0.0",
-    "vue-template-compiler": "^2.6.10"
+    "babel-core": "^6.10.4",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-runtime": "^6.9.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-2": "^6.11.0",
+    "babel-runtime": "^6.9.2",
+    "css-loader": "^2.1.1",
+    "vue-html-loader": "^1.2.4",
+    "vue-loader": "^11.1.4",
+    "vue-style-loader": "^2.0.3",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "1.13.1",
+    "webpack-merge": "^4.1.0"
   }
 }
