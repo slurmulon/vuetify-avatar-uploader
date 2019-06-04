@@ -102,9 +102,9 @@ url|URL of the avatar|`String`|Yes|
 
 ### Future
 
- - [] Provide configuration options for `v-progress-bar`
- - [] Handle upload cancellations
- - [] Allow custom supported MIME types
+ - [ ] Provide configuration options for `v-progress-bar`
+ - [ ] Handle upload cancellations
+ - [ ] Allow custom supported MIME types
 
 ## License
 
