@@ -4,6 +4,11 @@
 
 Wraps Vuetify's [`v-avatar`](https://vuetifyjs.com/en/components/avatars) component with file upload magic.
 
+1. User clicks on their avatar
+2. User selects an image file to use as their new avatar
+3. File is uploaded to your API
+4. User's avatar is replaced :sparkles:
+
 ## Installation
 
 ```sh
