@@ -42,9 +42,9 @@ module.exports = [
   merge(config, {
     entry: path.resolve(__dirname + '/src/plugin.js'),
     output: {
-      filename: 'vuetify-upload-button.min.js',
+      filename: 'vuetify-avatar-uploader.min.js',
       libraryTarget: 'window',
-      library: 'VuetifyUploadButton',
+      library: 'VuetifyAvatarUploader',
     }
   }),
 
