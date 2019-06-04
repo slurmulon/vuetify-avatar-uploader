@@ -27,6 +27,7 @@ export default {
 
 ```html
 <script type="text/javascript" src="node_modules/vuejs/dist/vue.min.js"></script>
+<script type="text/javascript" src="node_modules/vuetify/dist/vuetify.min.js"></script>
 <script type="text/javascript" src="node_modules/vuetify-upload-button/dist/upload-button.min.js"></script>
 <script type="text/javascript">
   Vue.use(VAvatarUploader);
