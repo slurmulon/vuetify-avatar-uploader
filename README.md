@@ -7,7 +7,7 @@ Wraps Vuetify's [`v-avatar`](https://vuetifyjs.com/en/components/avatars) compon
 ## Installation
 
 ```sh
-npm i vuetify-avatar-uploader
+npm i slurmulon/vuetify-avatar-uploader
 ```
 
 ### Module
