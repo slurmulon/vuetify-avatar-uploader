@@ -169,7 +169,7 @@ url|URL of the avatar|`String`|Yes|
 `success`|File upload succeeded
 `failed`|File upload failed
 `error-type`|File upload MIME type is unsupported
-`error-type`|File upload exceeds maximum size
+`error-size`|File upload exceeds maximum size
 
 ### Slots
 
