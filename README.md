@@ -12,7 +12,7 @@ Wraps Vuetify's [`v-avatar`](https://vuetifyjs.com/en/components/avatars) compon
 ## Installation
 
 ```sh
-npm i slurmulon/vuetify-avatar-uploader
+npm i vuetify-avatar-uploader
 ```
 
 ### Module
@@ -163,6 +163,7 @@ export default {
 `url`|URL of the avatar|`String`|Yes| 
 `request`|Performs the file upload|`Function`|Yes| 
 `rename`|Renames the file before upload|`Function`|No|`file => file.name`
+`field`|`FormData` field name to use for file data|`String`|No|`'file'`
 `clickable`|Determines if the user can click to upload|`Boolean`|No|`true`
 `maxSize`|Maximum file upload size (in bytes)|`Number`|No|`2048`
 `avatar`|Core `v-avatar` configuration object|`Object`|No|`{}`
@@ -187,7 +188,7 @@ export default {
  - [ ] Support upload cancellations
  - [ ] Support upload deletions (can only replace uploads right now)
  - [ ] Allow custom supported MIME types
- - [ ] Allow custom form property name for file uploads
+ - [x] Allow custom form property name for file uploads
  - [ ] Emit event on empty files
 
 ## License
