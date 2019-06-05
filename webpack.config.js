@@ -44,7 +44,7 @@ module.exports = [
     output: {
       filename: 'vuetify-avatar-uploader.min.js',
       libraryTarget: 'window',
-      library: 'VuetifyAvatarUploader',
+      library: 'VAvatarUploader',
     }
   }),
 
