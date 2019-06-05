@@ -33,7 +33,7 @@ export default {
 ```html
 <script type="text/javascript" src="node_modules/vuejs/dist/vue.min.js"></script>
 <script type="text/javascript" src="node_modules/vuetify/dist/vuetify.min.js"></script>
-<script type="text/javascript" src="node_modules/vuetify-upload-button/dist/upload-button.min.js"></script>
+<script type="text/javascript" src="node_modules/vuetify-avatar-uploader/dist/vuetify-avatar-uploader.min.js"></script>
 <script type="text/javascript">
   Vue.use(VAvatarUploader);
 </script>
@@ -187,6 +187,8 @@ export default {
  - [ ] Support upload cancellations
  - [ ] Support upload deletions (can only replace uploads right now)
  - [ ] Allow custom supported MIME types
+ - [ ] Allow custom form property name for file uploads
+ - [ ] Emit event on empty files
 
 ## License
 
