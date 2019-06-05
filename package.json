@@ -1,6 +1,9 @@
 {
   "name": "vuetify-avatar-uploader",
   "version": "0.1.0",
+  "description": "Vuetify's v-avatar component extended with file upload support",
+  "author": "Erik Vavro",
+  "license": "MIT",
   "main": "dist/vuetify-avatar-uploader.js",
   "scripts": {
     "build": "rm -rf dist && webpack --mode production"
