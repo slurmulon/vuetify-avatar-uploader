@@ -68,10 +68,22 @@ export default {
       default: file => file.name
     },
 
+    field: {
+      type: String,
+      required: false,
+      default: 'file'
+    },
+
     clickable: {
       type: Boolean,
       required: false,
       default: true
+    },
+
+    maxSize: {
+      type: Number,
+      required: false,
+      default: 2048
     },
 
     // TODO: Consider just using $attrs instead
@@ -79,12 +91,6 @@ export default {
       type: Object,
       required: false,
       default: () => ({})
-    },
-
-    maxSize: {
-      type: Number,
-      required: false,
-      default: 2048
     }
   },
 
@@ -138,7 +144,7 @@ export default {
         }.bind(this)
       }
 
-      form.append('file', file, this.rename(file))
+      form.append(this.field, file, this.rename(file))
 
       try {
         const upload = await this.request(form, config)
