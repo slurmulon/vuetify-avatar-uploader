@@ -111,15 +111,15 @@ export default {
     },
 
     change (field, file) {
-      const { maxSize } = this
       const [ image ] = file
+      const { maxSize } = this
 
       if (file.length > 0) {
-        const size = image.size / maxSize / maxSize
+        const size = image.size / 1024
 
         if (!image.type.match('image.*')) {
           this.$emit('error-type')
-        } else if (size > 1) {
+        } else if (size > maxSize) {
           this.$emit('error-size')
         } else {
           this.upload(image)
