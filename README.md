@@ -165,7 +165,7 @@ export default {
 `rename`|Renames the file before upload|`Function`|No|`file => file.name`
 `field`|`FormData` field name to use for file data|`String`|No|`'file'`
 `clickable`|Determines if the user can click to upload|`Boolean`|No|`true`
-`maxSize`|Maximum file upload size (in bytes)|`Number`|No|`2048`
+`maxSize`|Maximum file upload size (in KiB)|`Number`|No|`2048`
 `avatar`|Core `v-avatar` configuration object|`Object`|No|`{}`
 
 ### Events
