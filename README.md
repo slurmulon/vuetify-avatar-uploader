@@ -161,7 +161,7 @@ export default {
 **Name**|**Description**|**Type**|**Required**|**Default**
 -----|-----|-----|-----|-----
 `url`|URL of the avatar|`String`|Yes| 
-`request`|Performs the file upload|`Function`|Yes| 
+`request`|Performs the file upload|`Function`|Yes|
 `rename`|Renames the file before upload|`Function`|No|`file => file.name`
 `field`|`FormData` field name to use for file data|`String`|No|`'file'`
 `clickable`|Determines if the user can click to upload|`Boolean`|No|`true`
@@ -173,6 +173,7 @@ export default {
 **Name**|**Description**
 -----|-----
 `success`|File upload succeeded
+`progress`|File upload progress (`axios` only)
 `failed`|File upload failed
 `error-type`|File upload MIME type is unsupported
 `error-size`|File upload exceeds maximum size
