@@ -124,6 +124,8 @@ export default {
         } else {
           this.upload(image)
         }
+      } else {
+        this.$emit('error-empty')
       }
     },
 
