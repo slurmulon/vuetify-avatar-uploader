@@ -139,7 +139,11 @@ export default {
 
         onUploadProgress: function (event) {
           if (event.lengthComputable) {
-            this.status.progress = (event.loaded / event.total) * 100
+            const progress = (event.loaded / event.total) * 100
+
+            this.status.progress = progress
+
+            this.$emit('progress', progress)
           }
         }.bind(this)
       }
