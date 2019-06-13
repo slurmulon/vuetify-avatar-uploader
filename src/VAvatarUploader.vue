@@ -43,7 +43,17 @@
 
     <div v-else>
       <v-avatar v-bind="avatar">
-        <img :src="url" />
+        <img
+          v-if="url"
+          :src="url"
+        />
+
+        <slot
+          v-else
+          name="none"
+        >
+          <v-icon large>account_circle</v-icon>
+        </slot>
       </v-avatar>
     </div>
   </div>
