@@ -177,6 +177,7 @@ export default {
 `failed`|File upload failed
 `error-type`|File upload MIME type is unsupported
 `error-size`|File upload exceeds maximum size
+`error-empty`|File upload is empty
 
 ### Slots
 
