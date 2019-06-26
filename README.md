@@ -191,7 +191,7 @@ export default {
  - [ ] Support upload deletions (can only replace uploads right now)
  - [ ] Allow custom supported MIME types
  - [x] Allow custom form property name for file uploads
- - [ ] Emit event on empty files
+ - [x] Emit event on empty files
 
 ## License
 
