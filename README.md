@@ -191,6 +191,7 @@ export default {
 
 ### Future
 
+ - [ ] Document more real-world examples
  - [ ] Provide configuration options for `v-progress-bar`
  - [ ] Support upload cancellations
  - [x] Allow custom supported MIME types
