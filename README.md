@@ -166,6 +166,7 @@ export default {
 `field`|`FormData` field name to use for file data|`String`|No|`'file'`
 `clickable`|Determines if the user can click to upload|`Boolean`|No|`true`
 `maxSize`|Maximum file upload size (in KiB)|`Number`|No|`2048`
+`headers`|Optional HTTP headers to send with upload request|`Object`|No|`{}`
 `avatar`|Core `v-avatar` configuration object|`Object`|No|`{}`
 
 ### Events
@@ -174,6 +175,8 @@ export default {
 -----|-----
 `success`|File upload succeeded
 `progress`|File upload progress (`axios` only)
+`cancel`|File upload interrupted (i.e. user clicked on avatar while uploading)
+`replace`|User clicks on a pre-existing avatar (overrides default file selection flow!)
 `failed`|File upload failed
 `error-type`|File upload MIME type is unsupported
 `error-size`|File upload exceeds maximum size
@@ -181,15 +184,16 @@ export default {
 
 ### Slots
 
- - `none`
- - `loading`
+**Name**|**Description**
+-----|-----
+`none`|Displayed when the `url` prop is falsy
+`loading`|Displayed when an avatar is being uploaded
 
 ### Future
 
  - [ ] Provide configuration options for `v-progress-bar`
  - [ ] Support upload cancellations
- - [ ] Support upload deletions (can only replace uploads right now)
- - [ ] Allow custom supported MIME types
+ - [x] Allow custom supported MIME types
  - [x] Allow custom form property name for file uploads
  - [x] Emit event on empty files
 
