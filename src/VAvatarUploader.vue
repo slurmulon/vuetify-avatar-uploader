@@ -3,7 +3,7 @@
     <div v-if="clickable">
       <v-avatar
         v-bind="avatar"
-        @click="launch"
+        @click="click"
         style="cursor: pointer"
       >
         <img
@@ -36,7 +36,7 @@
         type="file"
         ref="file"
         name="file"
-        @change="change($event.target.name, $event.target.files)"
+        @change="select($event.target.name, $event.target.files)"
         style="display: none"
       />
     </div>
@@ -96,6 +96,12 @@ export default {
       default: 2048
     },
 
+    headers: {
+      type: Object,
+      required: false,
+      default: () => ({})
+    },
+
     // TODO: Consider just using $attrs instead
     avatar: {
       type: Object,
@@ -112,15 +118,31 @@ export default {
   }),
 
   methods: {
-    launch () {
+    click () {
       if (!this.status.loading) {
-        this.$refs.file.click()
+        if (!this.url) {
+          this.choose()
+        } else {
+          this.replace()
+        }
       } else {
-        // TODO: Cancel
+        this.$emit('cancel')
       }
     },
 
-    change (field, file) {
+    choose () {
+      return this.$refs.file.click()
+    },
+
+    replace () {
+      if (this.$listeners.replace) {
+        this.$emit('replace')
+      } else {
+        this.choose()
+      }
+    },
+
+    select (field, file) {
       const [ image ] = file
       const { maxSize } = this
 
@@ -146,7 +168,8 @@ export default {
 
       const config = {
         headers: {
-          'Content-Type': 'multipart/form-data'
+          'Content-Type': 'multipart/form-data',
+          ...this.headers
         },
 
         onUploadProgress: function (event) {
